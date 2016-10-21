@@ -97,31 +97,27 @@ def findColorSpot(picture, color):
 
 ######################Code Starts Here##################################
 
-def takepic():
-    takePicture()
-    pic = takePicture()
-    show(pic)
+
     
+    
+#chooseBlobColor = raw_input("Please choose a color")
 
-turnBy(45)
-wait(1)
-turnBy(90)
-wait(1)
-## turnBy(90)
-## wait(1)
-## turnBy(90)
-## wait(1)
-## turnBy(90)
-wait(1)
+def blobFind():
+    bigTurnNumber = randrange(1,45)
+    smallTurnNumber = randrage(1,15)
+    takePicture()
+    
+    while findColorSpot(takePicture(),1) <= 0:
+        turnBy(bigTurnNumber)
+        takePicture() 
+    if 1 < findColorSpot(takePicture(),1) < 108:
+    turnBy(-smallTurnNumber)
+    elif 148 < findColorSpot(takePicture(),1):
+    turnBy(smallTurnNumber)
+    else:
+        forward(4,1)
+    
+blobFind()
 
-takepic()
 
-pic = takePicture()
-
-x = findColorSpot(pic,3)
-print(x)
-
-
-if x > 0:
-    forward(4,1)
 
