@@ -111,9 +111,9 @@ def blobFind():
         turnBy(bigTurnNumber)
         takePicture() 
     if 1 < findColorSpot(takePicture(),1) < 108:
-    turnBy(-smallTurnNumber)
+        turnBy(-smallTurnNumber)
     elif 148 < findColorSpot(takePicture(),1):
-    turnBy(smallTurnNumber)
+        turnBy(smallTurnNumber)
     else:
         forward(4,1)
     
