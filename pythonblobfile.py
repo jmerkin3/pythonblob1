@@ -104,18 +104,20 @@ def findColorSpot(picture, color):
 
 def blobFind():
     bigTurnNumber = randrange(1,45)
-    smallTurnNumber = randrage(1,15)
+    smallTurnNumber = randrange(1,15)
     takePicture()
     
     while findColorSpot(takePicture(),1) <= 0:
         turnBy(bigTurnNumber)
-        takePicture() 
-    if 1 < findColorSpot(takePicture(),1) < 108:
-        turnBy(-smallTurnNumber)
-    elif 148 < findColorSpot(takePicture(),1):
-        turnBy(smallTurnNumber)
-    else:
-        forward(4,1)
+        takePicture()
+        print(findColorSpot(takePicture(),1))
+    while findColorSpot(takePicture(),1) > 0:
+        if 1 < findColorSpot(takePicture(),1) < 108:
+            turnBy(smallTurnNumber)
+        elif 148 < findColorSpot(takePicture(),1):
+            turnBy(-smallTurnNumber)
+        else:
+            forward(4.5,1)
     
 blobFind()
 
