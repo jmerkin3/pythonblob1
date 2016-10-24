@@ -100,24 +100,36 @@ def findColorSpot(picture, color):
 
     
     
-#chooseBlobColor = raw_input("Please choose a color")
+chooseBlobColor = raw_input("Please choose a color")
+if chooseBlobColor == "red" or chooseBlobColor == "Red":
+    colorNumber = 1
+elif chooseBlobColor == "green" or chooseBlobColor == "Green":
+    colorNumber = 2
+elif chooseBlobColor == "blue" or chooseBlobColor == "Blue":
+    colorNumber = 3
+elif chooseBlobColor == "yellow" or chooseBlobColor == "Yellow":
+    colorNumber = 4
+else:
+    print("Pick a valid color, please. D:<")
+    
+    
 
 def blobFind():
-    bigTurnNumber = randrange(1,45)
-    smallTurnNumber = randrange(1,15)
+    bigTurnNumber = randrange(30,60)
+    smallTurnNumber = randrange(1,9)
     takePicture()
-    
-    while findColorSpot(takePicture(),1) <= 0:
+    print(colorNumber)
+    while findColorSpot(takePicture(),colorNumber) == 0:
         turnBy(bigTurnNumber)
         takePicture()
-        print(findColorSpot(takePicture(),1))
-    while findColorSpot(takePicture(),1) > 0:
-        if 1 < findColorSpot(takePicture(),1) < 108:
+        print(findColorSpot(takePicture(),colorNumber))
+    while findColorSpot(takePicture(),colorNumber) > 0:
+        if 0 < findColorSpot(takePicture(),colorNumber) < 108:
             turnBy(smallTurnNumber)
-        elif 148 < findColorSpot(takePicture(),1):
+        elif 148 < findColorSpot(takePicture(),colorNumber):
             turnBy(-smallTurnNumber)
         else:
-            forward(4.5,1)
+            forward(5,1)
     
 blobFind()
 
