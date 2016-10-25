@@ -97,10 +97,7 @@ def findColorSpot(picture, color):
 
 ######################Code Starts Here##################################
 
-
-    
-    
-chooseBlobColor = raw_input("Please choose a color")
+chooseBlobColor = raw_input("Please choose the color that you would like the robot to find")
 if chooseBlobColor == "red" or chooseBlobColor == "Red":
     colorNumber = 1
 elif chooseBlobColor == "green" or chooseBlobColor == "Green":
@@ -110,8 +107,7 @@ elif chooseBlobColor == "blue" or chooseBlobColor == "Blue":
 elif chooseBlobColor == "yellow" or chooseBlobColor == "Yellow":
     colorNumber = 4
 else:
-    print("Pick a valid color, please. D:<")
-    
+    print("Pick one of the four colors or check your spelling, please")
     
 
 def blobFind():
@@ -129,9 +125,28 @@ def blobFind():
         elif 148 < findColorSpot(takePicture(),colorNumber):
             turnBy(-smallTurnNumber)
         else:
-            forward(5,1)
+            forward(4.5,1)
     
 blobFind()
 
+goAgain = raw_input("Would you like to find another blob?")
+if goAgain == "yes" or goAgain == "Yes" or goAgain == "y":
+    backward(4.5,1)
+elif goAgain == "no" or goAgain == "No" or goAgain == "n":
+    stop()
+else:
+    print("Please say either yes or no")
 
+chooseBlobColor = raw_input("Please choose the color that you would like the robot to find")
+if chooseBlobColor == "red" or chooseBlobColor == "Red":
+    colorNumber = 1
+elif chooseBlobColor == "green" or chooseBlobColor == "Green":
+    colorNumber = 2
+elif chooseBlobColor == "blue" or chooseBlobColor == "Blue":
+    colorNumber = 3
+elif chooseBlobColor == "yellow" or chooseBlobColor == "Yellow":
+    colorNumber = 4
+else:
+    print("Pick one of the four colors or check your spelling, please")
 
+blobFind()
