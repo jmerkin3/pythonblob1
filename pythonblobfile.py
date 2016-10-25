@@ -129,7 +129,6 @@ def blobFind():
     
 blobFind()
 
-
 goAgain = raw_input("Would you like to find another blob?")
 if goAgain == "yes" or goAgain == "Yes" or goAgain == "y":
     backward(4.5,1)
@@ -152,3 +151,4 @@ elif goAgain == "no" or goAgain == "No" or goAgain == "n":
     stop()
 else:
     print("Please say either yes or no")
+
