@@ -129,24 +129,26 @@ def blobFind():
     
 blobFind()
 
+
 goAgain = raw_input("Would you like to find another blob?")
 if goAgain == "yes" or goAgain == "Yes" or goAgain == "y":
     backward(4.5,1)
+    chooseBlobColor = raw_input("Please choose the color that you would like the robot to find")
+    if chooseBlobColor == "red" or chooseBlobColor == "Red":
+        colorNumber = 1
+        blobFind()
+    elif chooseBlobColor == "green" or chooseBlobColor == "Green":
+        colorNumber = 2
+        blobFind()
+    elif chooseBlobColor == "blue" or chooseBlobColor == "Blue":
+        colorNumber = 3
+        blobFind()
+    elif chooseBlobColor == "yellow" or chooseBlobColor == "Yellow":
+        colorNumber = 4
+        blobFind()
+    else:
+        print("Pick one of the four colors or check your spelling, please")
 elif goAgain == "no" or goAgain == "No" or goAgain == "n":
     stop()
 else:
     print("Please say either yes or no")
-
-chooseBlobColor = raw_input("Please choose the color that you would like the robot to find")
-if chooseBlobColor == "red" or chooseBlobColor == "Red":
-    colorNumber = 1
-elif chooseBlobColor == "green" or chooseBlobColor == "Green":
-    colorNumber = 2
-elif chooseBlobColor == "blue" or chooseBlobColor == "Blue":
-    colorNumber = 3
-elif chooseBlobColor == "yellow" or chooseBlobColor == "Yellow":
-    colorNumber = 4
-else:
-    print("Pick one of the four colors or check your spelling, please")
-
-blobFind()
